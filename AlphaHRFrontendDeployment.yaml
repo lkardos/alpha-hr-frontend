@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpha-hr-frontend-deployment
+  labels:
+    app: alpha-hr-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alpha-hr-frontend
+  template:
+    metadata:
+      labels:
+        app: alpha-hr-frontend
+    spec:
+      containers:
+        - name: alpha-hr-frontent
+          image: lkardos/alpha-hr-frontend
+          ports:
+            - containerPort: 80
+
